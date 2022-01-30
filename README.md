@@ -11,7 +11,6 @@ We will need this for when we deploy your site using another Github feature. For
 - Environment Setup (see above)
 - Basic HTML
 - CSS (Bootstrap)
-- Basic JS
 
 ## Final Notes
 I hope you find this tutorial useful!
