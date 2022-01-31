@@ -5,3 +5,12 @@ html, body {
 #root {
     width: 100%;
 }
+
+#home {
+    height: 1vh;
+    width: 100%;
+}
+
+nav a:hover {
+    cursor: pointer;
+}
