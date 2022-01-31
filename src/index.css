@@ -7,10 +7,39 @@ html, body {
 }
 
 #home {
-    height: 1vh;
+    height: 800px;
+    width: 100%;
+}
+
+#about {
+    height: 800px;
+    width: 100%;
+}
+
+#experience {
+    height: 800px;
+    width: 100%;
+}
+
+#projects {
+    height: 800px;
+    width: 100%;
+}
+
+#awards {
+    height: 800px;
     width: 100%;
 }
 
 nav a:hover {
     cursor: pointer;
+}
+
+.title {
+    margin-left: 10%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-style: italic;
+    font-weight: bold;
 }

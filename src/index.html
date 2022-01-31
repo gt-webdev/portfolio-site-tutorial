@@ -14,7 +14,7 @@
         <div id="root" class="bg-light">
             <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
                 <div class="container-fluid">
-                    <a class="navbar-brand" onclick="(e) => scrollToElement(e)" data-target="home">
+                    <a class="navbar-brand" onclick="scrollToElement()" data-target="root">
                         <img  src="assets/transparent_GTWD.png" alt="GT WebDev Logo" height="24" width="40" class="d-inline-block align-text-bottom"></img>
                         GT WebDev
                     </a>
@@ -24,22 +24,22 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a onclick="(e) => scrollToElement(e)" data-target="about" class="nav-link">
+                                <a onclick="scrollToElement()" data-target="about" class="nav-link">
                                     About
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a onclick="(e) => scrollToElement(e)" class="nav-link" data-target="experience">
+                                <a onclick="scrollToElement()" class="nav-link" data-target="experience">
                                     Experience
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a onclick="(e) => scrollToElement(e)" class="nav-link" data-target="projects">
+                                <a onclick="scrollToElement()" class="nav-link" data-target="projects">
                                     Projects
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a onclick="(e) => scrollToElement(e)" class="nav-link" data-target="awards">
+                                <a onclick="scrollToElement()" class="nav-link" data-target="awards">
                                     Awards
                                 </a>
                             </li>
@@ -48,22 +48,31 @@
                 </div>
             </nav>
             <div id="home">
-
+                <div>
+                    <!-- Replace this with your name! -->
+                    <h1 class="title">GEORGIA TECH WEB DEVELOPERS</h1>
+                </div>
             </div>
             <div id="about">
-
+                <!-- All about you! (Replace this with "About Me" or "Bio" or anything similar) -->
+                <h2>About Us</h2>
+                <p></p>
             </div>
             <div id="experience">
-
+                <!-- Talk about your experiences. You could list them if you wanted to. -->
+                <h2>Our Experience</h2>
             </div>
             <div id="projects">
-
+                <!-- Highlight any projects you would like others to see here! -->
+                <h2>Our Projects</h2>
             </div>
             <div id="awards">
-
+                <!-- Got something you want to show off? Do it here! -->
+                <h2>Awards and Achievements</h2>
             </div>
             <div id="footer">
-
+                <!-- Contact Info and other last notes -->
+                <div></div>
             </div>
         </div>
     </body>
