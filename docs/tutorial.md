@@ -5,6 +5,9 @@ This tutorial covers Basic HTML and CSS as well as a simple deployment for a por
 
 Let's get started!
 
+## Disclaimer
+To anyone who decides to teach this for a workshop or tutorial in the future, do note that this Markdown file is more of a guide rather than the full tutorial. It will have a lot of informtion, but it should not be read word-for-word. For those who missed a live session of the workshop, feel free to treat this like the transcript of the events.
+
 ## What do we have to work with?
 - `index.html` - The layout of the site and what will be seen when we deploy it to Github Pages. You will make the majority of your edits in this file. (Overriding our example code)
 - `index.css` - A style declaration file that will have some elements that are nice to talk about as well as the special ones we'll have aside from the imported styles.
@@ -12,9 +15,52 @@ Let's get started!
 - `index.js` - Most modern websites use some kind of JavaScript (JS). For this tutorial, you do not need to edit this file (nor will we cover it in detail). Just know that this is what makes our website just a bit more *fancy*.
 
 ## HTML
+This will not be a very in-depth workshop section, but there are specifics that need to be covered when discussing HTML. No HTML means no website so it's very important.
+
+### What is HTML?
+What HTML stands for is not important, but what it does is very important. HTML is the backbone of every website and without it, you have no website. CSS cannot stand alone without any HTML to be applied to (JS is another story, but we won't cover that). Every website on the internet has this and many languages are supported. HTML consists of `elements` with specifics to each. Let's start from the base.
+
+### Tags
+The basic syntax of HTML are called "tags". Tags define what is going to be shown and tells others what that code is going to look like (by default). Some common tags are, for example:
+* div - A section or "division" in a webpage
+* p - A paragraph
+* h{#} - Special header text, there's 6 different variants of these and they all have their special default style.
+
+Tags are declared using angle braces (`<p></p>`). All tags come in pairs (though some don't need the second one and we can shorthand others). However, if your tag does require the pair, if it is missing, that part of the page will not load so be careful.
+
+But tags, alone, are not enough to make a proper website so let's look at what can be added to give the site more life.
+
+### Attributes
+All tags have special keywords bound to them called "attributes". By default, many of them are empty, but they can be assigned at will. Some of the most commonly used ones are :
+* class - A class name to be used in CSS to apply styles to anything with that class
+* id - A unique identifier that can be used in CSS to apply styles only to the one with the id. Since it is a unique identifier, we can use special functions in JavaScript to get access to it too.
+* on* - JavaScript Event Listeners. These can give the elements life with all the extra interactivity. The words following `on` are the event that the element is waiting for. For example, `onclick` waits for a click event and `onblur` waits for the element to be clicked off of.
+
+### Elements
+Putting tags with attributes together forms an "element".
+```html
+<p class="para">Hello Worldddd!</p>
+```
+Elements are the core of all HTML documents. Anything of this structure, we will refer to as elements. CSS applies to *elements*. JS accesses *elements*. So from here on out, we will refer to these in HTML as elements.
+
+Browsers will also refer to these full structures of tags, attributes, and inner texts (or other elements) as as elements as well. Elements can carry their own styles and are effectively independent from each other (unless under a parent structure). Elements are relative to each other and the location of each in the document can be used to determine its position on the webpage.
+
+### How HTML Works
+There are two other tags we need to talk about before I say how HTML works:
+* `<script>`
+* `<link>`
+These are how you include the other two parts of web pages, CSS and JavaScript. Depending on when you need them is when you include them. This is because HTML rendering (displaying to your browser) is done top-down. Thus, say you are trying to access something before it doesn't exist, there will be errors. Styles are almost always defined or imported in to avoid this top-down issue. Thus, you can see then that any elements before others will appear from the top to the bottom. By default, HTML elements render one by one in a column as well so this can be clearly seen when you start!
+
+Elements inside of another will render inside of the outer element. So say you have the following:
+```html
+<div>
+    <p>Hello!</p>
+</div>
+```
+If that `<div>` is in the center of the screen then so will that `<p>`. In this case, we call the `<div>` the "parent" and the `<p>` the "child". Keep this in mind for later when we talk about CSS. This actually makes up part of how that works.
 
 ## CSS
-This workshop will not cover all of CSS, but it will cover the basics. CSS, or Cascading Style Sheets, defines what our website will look like beyond the base styles of HTML. Styles include things like background and text colors, text alignment, and even 3D transformations! In order to apply styles, we first need to *select* the element to which the styles will be applied. This is the first part of CSS that will be covered, the **selector**.
+Like HTML, this workshop will not cover all of CSS, but it will cover the basics. CSS, or Cascading Style Sheets, defines what our website will look like beyond the base styles of HTML. Styles include things like background and text colors, text alignment, and even 3D transformations! In order to apply styles, we first need to *select* the element to which the styles will be applied. This is the first part of CSS that will be covered, the **selector**.
 
 ### The Selector
 A key part of CSS are its selectors. These could be the tag itself, children, a class, or an id. Let's look at how these will be used in a CSS file. Say you have some element in your HTML that looks like this:
@@ -73,6 +119,10 @@ In order to guarantee an override, you should use `!important` on the declaratio
 ## Github Pages
 All public repositories have the ability to enable Github Pages. Github has an internal tool that builds web applications using Jekyll. There are other tools that people may use to build web apps like Webpack or Parcel, but Github uses Jekyll so we'll stick with that.
 
+If you have not already, make sure your new repository is set to Public. Navigate to Settings and click on the option "Pages". By default, Pages are not active. Choose to activate it on the `main` branch and select the root directory as the source. The build service will then proceed to find the `README.md`, but because the file has a "permalink" on it, it will route to the `index.html` in the same directory. Thus, wait a few minutes, then go to your browser and enter `{github_username}.github.io/{repository_name}` and you'll see your live site!
+
+More information about Github Pages [here](https://pages.github.com/)
+
 ## (Bonus) What does that JS file do?
 (Note for the live version - This may not exist due to time constraints)
 
@@ -89,4 +139,8 @@ Now then, what does this function do? We can summarize it in three steps.
 2. Calculates its position relative to the user's current position
 3. Update the user's position such that element is now at the top of the browser window.
 
-And that's it!
+<!-- Note to the live presenters: This isn't necessary, but it's a nice thought -->
+## (Bonus) Building a Toy Robot
+At first glance, it's difficult to really grasp what all of the "backbone" and "styles" and "interaction" words mean when discussing web development so think of it like this. Let's say we are building a toy robot. What do they need? Well, first we need to build the actual robot's body! Then we need to program it to be able to do whatever we want. Finally, we paint it and give it a cool appearance. See the similarity? HTML is like the physical body. CSS is its paint and appearance. JS is what it can actually do. (Otherwise, it's just a nice-looking robot sculpture!)
+
+**And that's it!**
